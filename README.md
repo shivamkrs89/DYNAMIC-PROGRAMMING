@@ -12,5 +12,6 @@
 * Longest common subsequences(LCS)***
 * LCS with permutation(LCS var)**
 * Shortest common subsequences.(LCS var)**
-* Minimum inserion and deletion to transform from one string to another.(LCS var) ***
+* Minimum insertion and deletion to transform from one string to another.(LCS var) ***
+* Minimum number of deletion from a given string to convert it into a palindrome.(LCS var)**
 //to be added soon
