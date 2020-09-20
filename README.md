@@ -12,4 +12,5 @@
 * Longest common subsequences(LCS)***
 * LCS with permutation(LCS var)**
 * Shortest common subsequences.(LCS var)**
+* Minimum inserion and deletion to transform from one string to another.(LCS var) ***
 //to be added soon
