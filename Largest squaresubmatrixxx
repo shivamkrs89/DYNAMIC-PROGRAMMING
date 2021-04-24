@@ -1,0 +1,71 @@
+/*
+Given a two-dimensional integer matrix, return the area of the largest square of 1 s.
+
+Constraints
+
+    n, m ≤ 200 where n and m are the number of rows and columns in matrix
+
+Example 1
+Input
+
+matrix = [
+    [0, 0, 0, 0, 0, 1, 1],
+    [0, 0, 0, 0, 0, 1, 1],
+    [1, 1, 1, 1, 0, 0, 0],
+    [1, 1, 1, 1, 0, 0, 0],
+    [1, 1, 1, 1, 0, 0, 0],
+    [1, 1, 1, 1, 0, 0, 0]
+]
+
+Output
+
+16
+
+Explanation
+
+The bottom left square has a bigger area than the top right square.
+*/
+
+//code goes here matrix is input matrix
+
+
+int solve(vector<vector<int>>& matrix) {
+   int n=matrix.size();
+   int m=matrix[0].size();
+
+   int dps[n][m];
+  int maxarea=0;
+  int i,j;   
+   for(i=0;i<n;i++)
+   {
+       for(j=0;j<m;j++)
+       {
+           if(i==0 || j==0)
+           dps[i][j]=matrix[i][j];
+        else
+        dps[i][j]=0;;
+       }
+   }
+for(i=1;i<n;i++)
+   {
+       for(j=1;j<m;j++)
+       {
+        if(matrix[i][j]==1)
+        {
+            dps[i][j]=min(dps[i-1][j-1],min(dps[i][j-1],dps[i-1][j]))+1;//it signifies if dps[i][j] has value v then it is to be assuredof that there is v*v matrix with all values 1 along all direction for better visualisation print dps matrix. 
+        }
+
+       }
+   }
+
+for(i=0;i<n;i++)
+   {
+       for(j=0;j<m;j++)
+       {
+          maxarea=max(maxarea,dps[i][j]*dps[i][j]);
+       }
+   }
+
+
+return maxarea;
+}
