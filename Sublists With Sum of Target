@@ -1,0 +1,41 @@
+Given a list of integers nums and an integer target, return the number of sublists whose sum is equal to target.
+
+Constraints
+
+    n ≤ 100,000 where n is the length of nums
+
+Example 1
+Input
+
+nums = [2, 0, 2]
+
+target = 2
+
+Output
+
+4
+
+Explanation
+
+We have these sublists whose sum is 2: [2], [2, 0], [0, 2], [2]
+
+
+//code here
+int solve(vector<int>& nums, int target) {
+    int sums=0,count=0;
+    int n=nums.size();
+    int i;
+    unordered_map<int,int> m1;
+    for(i=0;i<n;i++)
+    {
+     sums+=nums[i];
+     if(sums==target)
+     count++;
+     count+=m1[sums-target];  //cases where sum is not target but sum-target exist somewhere in our map
+
+     m1[sums]+=1;
+     
+    }
+    return count;
+
+}
