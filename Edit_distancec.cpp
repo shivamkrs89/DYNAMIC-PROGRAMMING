@@ -64,7 +64,7 @@ Explanation
             }
             else
             {
-                dp[i][j]=1+min(dp[i-1][j-1],min(dp[i-1][j],dp[i][j-1])); //if its differenct we increment by 1 + minvalue possiblity
+                dp[i][j]=1+min(dp[i-1][j-1],min(dp[i-1][j],dp[i][j-1])); //if its differenct we increment by 1 + minvalue possiblity with replace insert and delete respectively
             }
         }
     }
